@@ -1,0 +1,27 @@
+aside{
+  min-height: 100px;
+  width: 15rem;
+  .aside-logo{
+    padding: 0.9rem;
+    text-align: center;
+    margin-bottom: 2.1rem;
+
+    img{
+      width: 9.7rem;
+      max-width: 100%;
+    }
+  }
+
+  .aside-menu{
+    .list-group-item{
+      text-transform: uppercase;
+      padding: 1.1rem 1.3rem;
+      line-height: 1.9;
+      font-size: 1rem;
+
+      [class^="icon-"], [class*=" icon-"]{
+        margin-right: 0.7rem;
+      }
+    }
+  }
+}

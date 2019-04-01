@@ -1,0 +1,112 @@
+
+.card-offer{
+  position: relative;
+  flex-flow: row;
+  border: none;
+
+  .card-img, .card-body{
+    flex: 0 0 50%;
+    padding: 0;
+  }
+  .card-title{
+    height: 4.4rem;
+    padding: 0.5rem 1.3rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+
+    h2{
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    span{
+      font-size: 0.9rem;
+    }
+  }
+  .card-img{
+    background-size: cover;
+    background-position: center;
+    min-height: 22rem;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+    img{
+      max-width: 0;
+      max-height: 0;
+      opacity: 0;
+    }
+  }
+
+  .card-text{
+
+    .invest-line{
+      padding: 0.7rem 1.95rem;
+    }
+
+    .prop-name, .prop-val{
+      font-size: 1rem;
+      vertical-align: middle;
+    }
+
+    .prop-lists{
+      column-count: 2;
+      column-gap: 4rem;
+      padding: 0.4rem 2.15rem;
+    }
+
+    .list-group{
+      li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 0;
+
+        .prop-name{
+          font-size: 0.8rem;
+        }
+        .prop-val{
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  &.card-vertical{
+    flex-flow: column;
+    padding-top: 4rem;
+
+    .card-img{
+      min-height: 12rem;
+      height: 12rem;
+    }
+
+    .card-title{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .card-text{
+
+      .prop-lists{
+        column-count: 1;
+        column-gap: 0;
+      }
+
+    }
+  }
+
+  .progress{
+    height: 0.4rem;
+    border-radius: 0.4rem;
+    margin: 0.5rem 0 0.1rem;
+  }
+
+  .card-btn{
+    padding: 0.5rem 0;
+  }
+
+}

@@ -1,0 +1,132 @@
+@import "variables";
+
+.bg-main{
+  background-color: $color-main;
+  color: #ffffff;
+}
+.border-light{
+  border-color: $color-bg-light!important;
+}
+
+body{
+  color: $color-text-dark;
+}
+a{
+  color: $color-text-dark;
+  &:hover{
+    text-decoration: none;
+    color: $color-secondary;
+  }
+}
+
+/* Buttons */
+
+@mixin button-theme($name, $colorBg, $colorBorder, $colorTxt) {
+  .btn-#{$name} {
+    background-color: $colorBg;
+    border-color: $colorBorder;
+    color: $colorTxt;
+
+    &:not(:disabled):not(.disabled):hover{
+      background-color: mix(#000000, $colorBg, 10%);
+      border-color: mix(#000000, $colorBorder, 10%);
+      color: $colorTxt;
+    }
+    &:not(:disabled):not(.disabled):active{
+      background-color: mix(#ffffff, $colorBg, 10%);
+      border-color: mix(#ffffff, $colorBorder, 10%);
+      color: $colorTxt;
+    }
+  }
+}
+
+@include button-theme('primary', $color-secondary, $color-secondary, #fff);
+@include button-theme('success', $color-success, $color-success, #fff);
+@include button-theme('simple-light', #fff, $color-accent, $color-success);
+
+
+/* Aside */
+aside{
+  background-color: $color-main;
+  color: $color-text-light;
+  height: 100%;
+  overflow: auto;
+
+  a{
+    color: $color-text-light;
+  }
+
+  .list-group{
+    border: 1px solid;
+    border-color: transparentize($color-text-light, 0.5);
+  }
+  .list-group-item{
+    background-color: $color-main;
+    border-color: transparentize($color-text-light, 0.5);
+
+    &.active{
+      background-color: $color-main;
+      border-color: transparentize($color-text-light, 0.5);
+      a{
+        color: $color-secondary;
+      }
+    }
+  }
+}
+
+
+/* Page Wrapper */
+#page-wrapper{
+  background-color: $color-bg-light;
+}
+
+
+/* TopNavBar */
+
+.navbar{
+  .navbar-title{
+    color: $color-text-light;
+  }
+
+  .nav-item{
+
+    .badge{
+      position: absolute;
+      color: #fff;
+      top: 0;
+      right: 0;
+      padding: 0.2rem;
+      min-width: 1rem;
+      display: block;
+      text-align: center;
+    }
+
+    .icon-wrap{
+      width: 1.5rem;
+      height: 1.5rem;
+      display: inline-block;
+      background-color: $color-main;
+      color: #fff;
+      text-align: center;
+      line-height: 1.5rem;
+      margin-right: 0.5rem;
+    }
+
+    .nav-link{
+      position: relative;
+      padding: 0.5rem 0.4rem;
+      font-size: 0.9rem;
+      .icon-wrap{
+        background-color: $color-main;
+        color: #fff;
+      }
+      &:hover{
+        color: $color-accent;
+        .icon-wrap{
+          background-color: $color-accent;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

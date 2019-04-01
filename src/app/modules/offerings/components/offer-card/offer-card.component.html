@@ -1,0 +1,64 @@
+<div class="card card-offer" [ngClass]="{'card-vertical': vertical}">
+  
+  <div class="card-img" [ngStyle]="{'background-image': 'url('+offerImg+')'}">
+    <img class="invisible" [src]="offerImg" [alt]="offer?.name">
+  </div>
+  
+  <div class="card-body">
+    
+    <div class="card-title bg-main">
+      <h2>{{offer?.name}}</h2>
+      <div>
+        <span>{{offer?.location?.city}}</span>
+        <span *ngIf="offer?.location?.canton">, {{offer?.location?.canton}}</span>
+      </div>
+    </div>
+    
+    <div class="card-text">
+      <div class="invest-line border-bottom border-light">
+        <div class="d-flex justify-content-between">
+          <span class="prop-name">Available to invest</span>
+          <span class="prop-val">{{offer?.available_to_invest | currency:'CHF'}}</span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar bg-warning" role="progressbar"
+               [ngStyle]="{'width': '25%', 'aria-valuenow': 25, 'aria-valuemin': 0, 'aria-valuemax': 100}">
+          </div>
+        </div>
+      </div>
+      <div class="prop-list prop-lists">
+        <ul class="list-group">
+          <li class="border-bottom border-light">
+            <span class="prop-name">Purchase cost</span>
+            <span class="prop-val">{{offer?.purchase_price | currency:'CHF'}}</span>
+          </li>
+          <li class="border-bottom border-light">
+            <span class="prop-name">Min. investment</span>
+            <span class="prop-val">{{offer?.minimum_investment | currency:'CHF'}}</span>
+          </li>
+          <li class="border-bottom border-light">
+            <span class="prop-name">Investment type</span>
+            <span class="prop-val">{{offerType[offer?.type]}}</span>
+          </li>
+        </ul>
+        <ul class="list-group">
+          <li class="border-bottom border-light">
+            <span class="prop-name">Mortgage (LTV)</span>
+            <span class="prop-val">{{offer?.loan_to_value | number:'1.2-2'}} %</span>
+          </li>
+          <li class="border-bottom border-light">
+            <span class="prop-name">Holding period</span>
+            <span class="prop-val">{{offer?.holding_period}}</span>
+          </li>
+          <li class="border-bottom border-light">
+            <span class="prop-name">Expected return on equity</span>
+            <span class="prop-val">{{offer?.expected_roi | number:'1.2-2'}} %</span>
+          </li>
+        </ul>
+      </div>
+      <div class="card-btn text-center">
+        <button class="btn btn-primary text-uppercase rounded-0 px-5">More details</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+//@import "../node_modules/bootstrap/scss/utilities/spacing";
+@import "imports/theme";
+@import "imports/iconfont";
+
+
+html, body{
+  height: 100%;
+}
+body{
+  overflow: auto;
+  font-size: 10px;
+}
+
+app-root, app-main{
+  height: 100%;
+  width: 100%;
+  min-width: 1400px;
+  display: block;
+}
+
+#wrapper {
+  height: 100%;
+  display: flex;
+
+  #page-wrapper{
+    min-width: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: stretch;
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+  #routes-wrap{
+    flex: 1 1 auto;
+  }
+}
+
+
+
