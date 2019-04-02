@@ -4,6 +4,9 @@
   flex-flow: row;
   border: none;
   overflow: hidden;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 
   .card-img{
     flex: 1 1 50%;
@@ -66,8 +69,6 @@
     }
 
     .prop-lists{
-      //column-count: 2;
-      //column-gap: 4rem;
       padding: 0.4rem 0.15rem;
       display: flex;
 
@@ -104,22 +105,33 @@
     }
 
     .card-img{
-      min-height: 10.5rem;
-      height: 10.5rem;
+      min-height: 10rem;
+      height: 10rem;
     }
 
     .card-title{
       position: absolute;
       top: 0;
       left: 0;
+      text-align: center;
+
+      .subtitle{
+        text-transform: uppercase;
+      }
     }
 
     .card-text{
 
+      .invest-line{
+        padding: 0.7rem 1rem;
+      }
+
       .prop-lists{
-        //column-count: 1;
-        //column-gap: 0;
         display: block;
+
+        ul{
+          padding: 0 1.3rem;
+        }
       }
 
     }

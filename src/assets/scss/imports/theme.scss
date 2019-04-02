@@ -19,6 +19,59 @@ a{
   }
 }
 
+/* Paddings / Margins */
+$spacer:                     1rem;
+$spacer-x:                   $spacer;
+$spacer-y:                   $spacer;
+$spacers: (
+  0: (
+    x:   0,
+    y:   0
+  ),
+  h: (
+    x:   ($spacer-x * 0.5),
+    y:   ($spacer-y * 0.5)
+  ),
+  10: (
+    x:   $spacer-x,
+    y:   $spacer-y
+  ),
+  15: (
+    x:   ($spacer-x * 1.5),
+    y:   ($spacer-y * 1.5)
+  ),
+  20: (
+    x:   ($spacer-x * 2),
+    y:   ($spacer-y * 2)
+  ),
+  30: (
+    x:   ($spacer-x * 3),
+    y:   ($spacer-y * 3)
+  ),
+  40: (
+    x:   ($spacer-x * 4),
+    y:   ($spacer-y * 4)
+  )
+);
+
+@mixin spacing() {
+  @each $prop, $abbrev in (margin: m, padding: p) {
+    @each $size, $lengths in $spacers {
+      $length-x:   map-get($lengths, x);
+      $length-y:   map-get($lengths, y);
+
+      .app-#{$abbrev}-#{$size} { #{$prop}: $length-y $length-x !important; } // a = All sides
+      .app-#{$abbrev}t-#{$size} { #{$prop}-top:    $length-y !important; }
+      .app-#{$abbrev}r-#{$size} { #{$prop}-right:  $length-x !important; }
+      .app-#{$abbrev}b-#{$size} { #{$prop}-bottom: $length-y !important; }
+      .app-#{$abbrev}l-#{$size} { #{$prop}-left:   $length-x !important; }
+    }
+  }
+}
+
+@include spacing;
+
+
 /* Buttons */
 
 @mixin button-theme($name, $colorBg, $colorBorder, $colorTxt) {
