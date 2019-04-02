@@ -4,7 +4,7 @@
   
   <div class="row app-mt-20" *ngIf="offerings?.length > 1">
     <div class="col-xl-4 col-lg-6 mb-4" *ngFor="let offer of offerings | slice:1">
-      <app-offer-card [offer]="offerings[0]" [vertical]="true"></app-offer-card>
+      <app-offer-card [offer]="offer" [vertical]="true"></app-offer-card>
     </div>
   </div>
   

@@ -8,9 +8,7 @@ export class ApiService {
 
   constructor(
     private _http: HttpClient,
-  ) {
-    console.log('ApiService');
-  }
+  ) {}
 
   // headers: Headers = new Headers({
   //   'Content-Type': 'application/json',

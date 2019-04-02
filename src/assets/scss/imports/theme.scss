@@ -1,4 +1,5 @@
 @import "variables";
+@import "../node_modules/bootstrap/scss/mixins/gradients";
 
 .bg-main{
   background-color: $color-main;
@@ -189,3 +190,42 @@ aside {
     }
   }
 }
+
+
+/* Progress Bars */
+
+.progress{
+
+  .progress-bar{
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+  }
+
+  &.warning {
+    background-color: #ffefe7;
+
+    .progress-bar{
+      @include gradient-x(#ff7723, #eeb374);
+    }
+  }
+  &.success {
+    background-color: #f1ffe7;
+
+    .progress-bar{
+      @include gradient-x(#409514, #b3ed41);
+    }
+  }
+
+}
+
+.ribbon-wrap{
+  .success {
+    @include gradient-y(#b0d418, #4cbd31);
+
+    &:after{
+      border-color: transparent #a2c310 transparent transparent;
+    }
+  }
+}
+
