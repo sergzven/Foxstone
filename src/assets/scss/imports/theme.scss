@@ -46,29 +46,35 @@ a{
 
 
 /* Aside */
-aside{
+aside {
   background-color: $color-main;
-  color: $color-text-light;
+  min-width: 4rem;
   height: 100%;
-  overflow: auto;
 
-  a{
-    color: $color-text-light;
-  }
-
-  .list-group{
-    border: 1px solid;
-    border-color: transparentize($color-text-light, 0.5);
-  }
-  .list-group-item{
+  .wrap{
     background-color: $color-main;
-    border-color: transparentize($color-text-light, 0.5);
+    color: $color-text-light;
+    height: 100%;
+    overflow: auto;
 
-    &.active{
+    a{
+      color: $color-text-light;
+    }
+
+    .list-group{
+      border: 1px solid;
+      border-color: transparentize($color-text-light, 0.5);
+    }
+    .list-group-item{
       background-color: $color-main;
       border-color: transparentize($color-text-light, 0.5);
-      a{
-        color: $color-secondary;
+
+      &.active{
+        background-color: $color-main;
+        border-color: transparentize($color-text-light, 0.5);
+        a{
+          color: $color-secondary;
+        }
       }
     }
   }

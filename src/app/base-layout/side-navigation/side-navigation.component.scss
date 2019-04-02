@@ -1,27 +1,99 @@
-aside{
-  min-height: 100px;
-  width: 15rem;
-  .aside-logo{
-    padding: 0.9rem;
-    text-align: center;
-    margin-bottom: 2.1rem;
 
-    img{
-      width: 9.7rem;
-      max-width: 100%;
+aside{
+
+  .wrap{
+    min-height: 100px;
+    width: 15rem;
+    overflow: visible;
+
+    .mob-menu-btn{
+      display: none;
+      padding: 1.1rem 0.7rem;
+      line-height: 1;
+      font-size: 2rem;
+      border: none;
+      background-color: transparent;
+      color: #ffffff;
+
+      &:active, &:focus{
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+      }
     }
+
+    .aside-logo{
+      padding: 0.9rem;
+      text-align: center;
+      margin-bottom: 2.1rem;
+
+      img{
+        width: 9.7rem;
+        max-width: 100%;
+      }
+    }
+
+    .aside-menu{
+      .list-group-item{
+        text-transform: uppercase;
+        padding: 1.1rem 1.3rem;
+        line-height: 1.9;
+        font-size: 1rem;
+
+        [class^="icon-"], [class*=" icon-"]{
+          margin-right: 0.7rem;
+        }
+      }
+    }
+
+
   }
 
-  .aside-menu{
-    .list-group-item{
-      text-transform: uppercase;
-      padding: 1.1rem 1.3rem;
-      line-height: 1.9;
-      font-size: 1rem;
+  &.compact {
+    &:not(.open) .wrap{
+      margin-left: -11rem;
 
-      [class^="icon-"], [class*=" icon-"]{
-        margin-right: 0.7rem;
+      .mob-menu-btn{
+        display: block;
+      }
+
+      .aside-logo{
+        display: none;
+      }
+
+      .aside-menu{
+        .list-group{
+          align-items: flex-end;
+        }
+        .list-group-item{
+          [class^="icon-"], [class*=" icon-"]{
+            margin-right: 0;
+          }
+
+          span{
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.open .wrap{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+
+      .mob-menu-btn{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #10263b;
+        margin-right: -4rem;
       }
     }
   }
+
+
 }

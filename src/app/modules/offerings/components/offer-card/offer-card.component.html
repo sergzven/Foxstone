@@ -1,4 +1,4 @@
-<div class="card card-offer" [ngClass]="{'card-vertical': vertical}">
+<div class="card card-offer" [ngClass]="{'card-vertical': vertical, 'card-compact': compact}" (resized)="onResized($event)">
   
   <div class="card-img" [ngStyle]="{'background-image': 'url('+offerImg+')'}">
     <img class="invisible" [src]="offerImg" [alt]="offer?.name">
